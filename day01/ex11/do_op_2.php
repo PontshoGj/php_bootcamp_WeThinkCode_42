@@ -13,47 +13,57 @@ if($argc == 2)
                 $al[] = $arrsp[$i];
             $i++;
         }
-        sort($al);
         return ($al);
     }
     $a = array();
+    $calc = "";
     if (strlen(strstr($argv[1], "*")) > 0)
     {
         $a = ft_split($argv[1], "*");
+        $calc = "*";
     }
     elseif (strlen(strstr($argv[1], "+")) > 0)
     {
         $a = ft_split($argv[1], "+");
+        $calc = "+";
     }
     elseif (strlen(strstr($argv[1], "-")) > 0)
     {
         $a = ft_split($argv[1], "-");
+        $calc = "-";
     }
     elseif (strlen(strstr($argv[1], "/")) > 0)
     {
-            $a = ft_split($argv[1], "/");
+        $a = ft_split($argv[1], "/");
+        $calc = "/";
     }
     elseif (strlen(strstr($argv[1], "%")) > 0)
     {
         $a = ft_split($argv[1], "%");
+        $calc = "%";
     }
-    //echo $b;
-    //$b = trim($argv[3]);
-    //$calc = trim($argv[2]);
-
-    /*if ($calc == "+")
-        echo $a + $b;
-    elseif ($calc == "-")
-        echo $a - $b;
-    elseif ($calc == "/")
-        echo $a / $b;
-    elseif ($calc == "%")
-        echo $a % $b;
-    elseif ($calc == "*")
-        echo $a * $b;
-    */echo "\n";
+    if (count($a))
+    {
+        $b = trim($a[0]);
+        $c = trim($a[1]);
+        if (is_numeric($b) && is_numeric($c))
+        {
+            if ($calc == "+")
+                echo $b + $c;
+            elseif ($calc == "-")
+                echo $b - $c;
+            elseif ($calc == "/")
+                echo $b / $c;
+            elseif ($calc == "%")
+                echo $b % $c;
+            elseif ($calc == "*")
+                echo $b * $c;
+        }else
+            echo "Syntax Error";
+    }else
+        echo "Syntax Error";
+    echo "\n";
 }
 else
     echo "Incorrect Parameters\n";
-
 ?>
