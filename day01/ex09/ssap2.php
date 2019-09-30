@@ -15,14 +15,18 @@ if ($argc != 1)
         }
         return ($al);
     }
-    $j = 0;
-    $s = ft_split($argv[1]);
-    while ($j < count($s))
+    $arr = array();
+    $j = 1;
+    while ($j < $argc)
     {
-        echo $s[$j++];
-        if ($j < count($s))
-            echo " ";
+        echo count($argv)."\n";
+        $arr = array_merge ($arr, ft_split($argv[$j]));
+        $j++;
     }
-    echo "\n";
+    print_r($arr);
+    $j = 0;
+    sort($arr);
+    while ($j < count($arr))
+        echo $arr[$j++]."\n";
 }
 ?>

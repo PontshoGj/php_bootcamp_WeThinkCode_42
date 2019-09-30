@@ -15,14 +15,10 @@ if ($argc != 1)
         }
         return ($al);
     }
-    $j = 0;
+    $j = 1;
     $s = ft_split($argv[1]);
     while ($j < count($s))
-    {
-        echo $s[$j++];
-        if ($j < count($s))
-            echo " ";
-    }
-    echo "\n";
+        echo $s[$j++]." ";
+    echo $s[0]."\n";
 }
 ?>
