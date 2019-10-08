@@ -1,0 +1,26 @@
+ul{
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #333;
+    font-family: 'Times New Roman', Times, serif;
+}
+li{
+    float: left;
+    border-right:1px solid #bbb;
+}
+li a{
+    display: block;
+    color: white;
+    padding: 15px 50px;
+    text-decoration: none;
+    
+}
+li a:hover {
+    background-color: #111;
+}
+.active {
+    background-color: rgb(107, 6, 6);
+}
+.drop{
+    display: inline-block;
+}

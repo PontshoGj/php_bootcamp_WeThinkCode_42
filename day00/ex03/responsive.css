@@ -1,6 +1,6 @@
 body{
     font-size: 28px;
-    /*background-image: url('https://www.smallrevolution.com/wp-content/uploads/2018/12/Small-Revolution_Virtual-Assistants-How-to-Select-a-laptop-for-Your-VA-Work-featured-image-770x442.jpg');*/
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7_Igfgnny2mdqtyAstZST-WtM00iKG-wqYcT8r7k6VW4YbGBOmA');
     background-repeat: no-repeat;
     font-family: sans-serif;
 }
@@ -31,20 +31,47 @@ p {
     margin: 0;
     padding: 0;
 }
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 800px) {
     body{
         font-size: 25px;
     }
-}
-
-@media screen and (max-width: 180px) {
-    body{
-        font-size: 12px;
+    .right {
+        font-size: 6px;
+    }
+    .left{
+        font-size: 6px;
     }
 }
 
-@media screen and (max-width: 146px) {
+@media screen and (max-width: 750px) {
     body{
+        font-size: 20px;
+    }
+    .right {
+        font-size: 5px;
+    }
+    .left{
+        font-size: 5px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        font-size: 15px;
+    }
+    .right{
         font-size: 4px;
+    }
+    .left{
+        font-size: 4px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    body{
+        font-size: 10px;
+    }
+    .right .left{
+        font-size: 3px;
     }
 }
