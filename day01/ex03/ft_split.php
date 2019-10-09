@@ -3,16 +3,9 @@
 
 function ft_split($s)
 {
-    $arrsp = explode(" ", $s);
-    $i = 0;
-    $al = array();
-    while ($i < count($arrsp))
-    {
-        if (($arrsp[$i] != ""))
-            $al[] = $arrsp[$i];
-        $i++;
-    }
-    sort($al);
-    return ($al);
+    $arrsp = preg_split("/[\s,]+/", $s);
+    $arrsp = array_filter($arrsp);
+    sort($arrsp);
+    return ($arrsp);
 }
 ?>

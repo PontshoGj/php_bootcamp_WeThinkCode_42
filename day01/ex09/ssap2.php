@@ -4,29 +4,44 @@ if ($argc != 1)
 {
     function ft_split($s)
     {
-        $arrsp = explode(" ", $s);
-        $i = 0;
-        $al = array();
-        while ($i < count($arrsp))
-        {
-            if (($arrsp[$i] != ""))
-                $al[] = $arrsp[$i];
-            $i++;
-        }
-        return ($al);
+        $arrsp = preg_split("/[\s,]+/", $s);
+        $arrsp = array_filter($arrsp);
+        sort($arrsp);
+        return ($arrsp);
+    }
+    function cmp($a, $b)
+    {
+        return strcmp(strtoupper($a), strtoupper($b));
     }
     $arr = array();
     $j = 1;
-    while ($j < $argc)
+    while ($j < count($argv))
+        $arr = array_merge ($arr, ft_split($argv[$j++]));
+    $integer = array();
+    $special = array();
+    $ch = array();
+    $j = 0;
+    while ($j < count($arr))
     {
-        echo count($argv)."\n";
-        $arr = array_merge ($arr, ft_split($argv[$j]));
+        if (is_numeric($arr[$j]))
+            $integer[] = $arr[$j];
+        elseif (preg_match("/[\'^£$%&*()}{@#~?><>,|=_+¬-]/", $arr[$j]))
+            $special[] = $arr[$j];
+        else
+            $ch[] = $arr[$j];
         $j++;
     }
-    print_r($arr);
     $j = 0;
-    sort($arr);
-    while ($j < count($arr))
-        echo $arr[$j++]."\n";
+    usort($ch, cmp);
+    rsort($integer);
+    sort($special);
+    while ($j < count($ch))
+        echo $ch[$j++]."\n";
+    $j = 0;
+    while ($j < count($integer))
+        echo $integer[$j++]."\n";
+    $j = 0;
+    while ($j < count($special))
+        echo $special[$j++]."\n";
 }
 ?>

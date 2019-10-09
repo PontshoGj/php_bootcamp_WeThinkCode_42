@@ -1,7 +1,8 @@
 body{
     font-size: 28px;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7_Igfgnny2mdqtyAstZST-WtM00iKG-wqYcT8r7k6VW4YbGBOmA');
+    background-image: url('https://www.wallpaper.net.in/file/17243/600x380/16:9/dna-4k-8k-abstraction-biology-chemistry-medicine-psychedelic-wallpaper_325537169.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
     font-family: sans-serif;
 }
 
@@ -30,6 +31,10 @@ body{
 p {
     margin: 0;
     padding: 0;
+}
+
+table{
+    justify-items: center;
 }
 @media screen and (max-width: 800px) {
     body{

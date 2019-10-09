@@ -4,16 +4,10 @@ if ($argc != 1)
 {
     function ft_split($s)
     {
-        $arrsp = explode(" ", $s);
-        $i = 0;
-        $al = array();
-        while ($i < count($arrsp))
-        {
-            if (($arrsp[$i] != ""))
-                $al[] = $arrsp[$i];
-            $i++;
-        }
-        return ($al);
+        $arrsp = preg_split("/[\s,]+/", $s);
+        $arrsp = array_filter($arrsp);
+        sort($arrsp);
+        return ($arrsp);
     }
     $j = 0;
     $s = ft_split($argv[1]);
