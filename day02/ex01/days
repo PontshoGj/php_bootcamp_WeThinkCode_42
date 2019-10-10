@@ -1,0 +1,22 @@
+Sunday = dimanche
+Monday = Lundi
+Tuesday = Mardi
+Wednesday = Mercredi
+Thursday = Jeudi
+Friday = Vendredi
+Saturday = samedi
+
+January = janvier
+February = février
+March = Mars
+April = avril
+May = Mai
+June = juin
+July = juillet
+August = août
+September = septembre
+October = octobre
+November = novembre
+December = décembre
+
+[A-Z][a-z]{1,7}\s[\d]{1,2}\s[A-Z][a-z]{1,9}\s[\d]{4}\s[[\d]{1,2}\:[\d]{1,2}\:[\d]{1,2}

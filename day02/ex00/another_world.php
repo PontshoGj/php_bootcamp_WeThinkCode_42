@@ -1,4 +1,4 @@
-#!/bin/php
+#!/usr/bin/php
 <?php
 
 if ($argc > 1)
@@ -23,7 +23,7 @@ $j = 0;
 while ($j < count($s))
 {
     echo trim($s[$j++]);
-    if ($j++ != count($s))
+    if ($j != count($s))
         echo " ";
 }
 echo "\n";

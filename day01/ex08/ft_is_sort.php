@@ -1,4 +1,4 @@
-#!/bin/php
+#!/usr/bin/php
 <?php
 function ft_is_sort($i)
 {

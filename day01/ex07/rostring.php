@@ -1,12 +1,20 @@
-#!/bin/php
+#!/usr/bin/php
 <?php
 if ($argc != 1)
 {
     function ft_split($s)
     {
-        $arrsp = preg_split("/[\s,]+/", $s);
-        $arrsp = array_filter($arrsp);
-        return ($arrsp);
+        $arrsp = explode(" ", $s);
+        $i = 0;
+        $al = array();
+        while ($i < count($arrsp))
+        {
+            if (($arrsp[$i] != ""))
+                $al[] = $arrsp[$i];
+            $i++;
+        }
+        sort($al);
+        return ($al);
     }
     $j = 1;
     $s = ft_split($argv[1]);
