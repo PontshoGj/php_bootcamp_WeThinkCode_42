@@ -1,4 +1,5 @@
 #!/usr/bin/php
 <?php
-echo posix_ctermid (  );
+    $s = shell_exec('w');
+    
 ?>
