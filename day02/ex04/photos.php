@@ -29,22 +29,36 @@
         for($x = 0; $x < count($harry[$j]); $x++)
         {
             if (strstr($harry[$j][$x], "src"))
-                $hname[] = substr(trim($harry[$j][$x]), 5, (strlen(trim($harry[$j][$x])) - 6));
+                $hname[] = substr($harry[$j][$x], 5, strlen($harry[$j][$x]));
         }
     }
-    $sname = array();
+    $ss = array();
     for($j = 0; $j < count($hname); $j++)
-        $sname[] = ft_split($hname[$j],"/");
+        $ss[] = ft_split($hname[$j],"\"");
+    //print_r($ss);
+    $sname = array();
+    for($j = 0; $j < count($ss); $j++)
+    {
+        for($i = 0; $i < count($ss[$j]); $i++)
+        {
+            if (strstr($ss[$j][$i], "htt"))
+                $sname[] = $ss[$j][$i];
+        }
+    }
+    $bname = array();
+    for($j = 0; $j < count($sname); $j++)
+        $bname[] = ft_split($sname[$j],"/");
+    //print_r($sname);
     $cwd = array();
     for($j = 0; $j < count($sname); $j++)
-        $cwd[] = getcwd()."/".$file."/".$sname[$j][count($sname[$j]) - 1];
+        $cwd[] = getcwd()."/".$file."/".$bname[$j][count($bname[$j]) - 1];
     //print_r($cwd);
     $g = "mkdir ".$file;
     $s = shell_exec($g);
     $ch = curl_init();
     for($j = 0; $j < count($sname); $j++)
     {
-        curl_setopt($ch, CURLOPT_URL, $hname[$j]);
+        curl_setopt($ch, CURLOPT_URL, $sname[$j]);
         $fp = fopen($cwd[$j], 'wb');
         curl_setopt($ch, CURLOPT_FILE, $fp);
         curl_setopt($ch, CURLOPT_HEADER, 0);
