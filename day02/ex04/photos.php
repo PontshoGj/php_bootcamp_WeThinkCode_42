@@ -50,11 +50,9 @@
     $bname = array();
     for($j = 0; $j < count($sname); $j++)
         $bname[] = ft_split($sname[$j],"/");
-    //print_r($sname);
     $cwd = array();
     for($j = 0; $j < count($sname); $j++)
         $cwd[] = getcwd()."/".$file."/".$bname[$j][count($bname[$j]) - 1];
-    //print_r($cwd);
     $g = "mkdir ".$file;
     $s = shell_exec($g);
     $ch = curl_init();
