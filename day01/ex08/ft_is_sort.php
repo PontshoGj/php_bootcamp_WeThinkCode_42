@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 function ft_is_sort($i)
 {
@@ -6,7 +5,7 @@ function ft_is_sort($i)
     $f = 1;
     while($f < count($i))
     {
-        if (strcmp($i[$j], $i[$f]) > 0)
+        if (strcmp($i[$j], $i[$f]) != 0)
             return 0;
         $j++;
         $f++;

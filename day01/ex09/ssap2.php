@@ -22,7 +22,7 @@ if ($argc != 1)
     }
     $arr = array();
     $j = 1;
-    while ($j < count($argv))
+    while ($argv[$j])
         $arr = array_merge ($arr, ft_split($argv[$j++]));
     $integer = array();
     $special = array();

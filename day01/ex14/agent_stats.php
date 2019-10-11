@@ -20,20 +20,76 @@
         if (feof(STDIN))
             break;
     }
-    $i = 0;
-    $arr = array();
-    while ($i < count($s))
+    function gradenomouli($s, $argv)
     {
-        if (strstr($s[$i], $argv[1]))
-            $arr[] = $s[$i];
-        $i++;
+        $i = 0;
+        $arr = array();
+        while ($i < count($s))
+        {
+            if (strstr($s[$i], $argv))
+                $arr[] = $s[$i];
+            $i++;
+        }
+        $arr2 = array();
+        $i = 0;
+        $sum = 0;
+        while ($i < count($arr))
+        {
+            if (preg_match("/($argv)\;\d+\;\w/", $arr[$i]))
+            {
+                $arr2 = ft_split($arr[$i], ";");
+                if (is_numeric($arr[$i]))
+                    $sum += $arr2[1];
+            }
+            $i++;
+        }
+        if ($sum != 0)
+        {
+            $sum /= $i;
+        }
+        return $sum;
     }
-    $i = 0;
-    $sum = 0;
-    while ($i < count($arr))
+    function grade($s, $argv)
     {
-        $arr = ft_split($arr[$i++], ";");
-        $sum += $arr[1];
+        $i = 0;
+        $arr = array();
+        while ($i < count($s))
+        {
+            if (strstr($s[$i], $argv))
+                $arr[] = $s[$i];
+            $i++;
+        }
+        $arr2 = array();
+        $i = 0;
+        $sum = 0;
+        while ($i < count($arr))
+        {
+            if (preg_match("/($argv)\;\d+\;\w/", $arr[$i]))
+            {
+                $arr2 = ft_split($arr[$i], ";");
+                if (is_numeric($arr[$i]))
+                    $sum += $arr2[1];
+            }
+            $i++;
+        }
+        $q = 0;
+        while ($q < count($arr))
+        {
+            if (preg_match("/(bertrand_y)\;(\d+|)\;(moulinette)\;(\d+|)/", $arr[$q]))
+            {
+
+            }
+            $q++;
+        }
+        if ($sum != 0)
+            $sum /= $i;
+        return $sum;
     }
-    echo $sum/$i;
+    if (!strstr($argv[1], "_user"))
+    {
+        echo gradenomouli($s, $argv[1]);
+    }elseif(strstr($argv[1], "_user"))
+    {
+        echo grade($s, $argv[1])
+    }
 ?>

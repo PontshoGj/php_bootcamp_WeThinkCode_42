@@ -32,7 +32,7 @@
         if (strcmp($q[$i][1], "console") == 0)
             echo $q[$i][0]. " ".$q[$i][1]."  ".date("M d")." ".$q[$i][3]."\n";
         else
-            echo $q[$i][0]. " ".gettty($q[$i][1])."  ".date("M d")." ".$q[$i][3]."\n";
+            echo $q[$i][0]. " tty".$q[$i][1]."  ".date("M d")." ".$q[$i][3]."\n";
         $i++;
     }
 ?>
