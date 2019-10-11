@@ -43,7 +43,9 @@
         {
             if (strstr($ss[$j][$i], "htt"))
                 $sname[] = $ss[$j][$i];
-        }
+            elseif(strstr($ss[$j][$i], "."))
+                $sname[] = $ss[$j][$i];
+        }   
     }
     $bname = array();
     for($j = 0; $j < count($sname); $j++)
