@@ -7,12 +7,10 @@
     $i = 0;
     while ($i < count($q))
     {
-        if(strstr($q[$i],"title="))
+        if(preg_match('/title=".*"/', $q[$i]))
         {
-            echo strstr($q[$i],"title=");
-        }elseif (strstr($q[$i], "<a"))
-        {
-            echo strstr($q[$i], "<a");
+            $s = preg_split('/"/', $q[$i]);
+            echo $s[0]."\"".strtoupper($s[1])."\"".$s[2]."\n";
         }
         else
             echo $q[$i]."\n";
