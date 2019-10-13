@@ -90,6 +90,6 @@
         echo gradenomouli($s, $argv[1]);
     }elseif(strstr($argv[1], "_user"))
     {
-        echo grade($s, $argv[1])
+        echo grade($s, $argv[1]);
     }
 ?>
