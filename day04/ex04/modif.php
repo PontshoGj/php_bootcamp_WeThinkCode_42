@@ -6,7 +6,7 @@
     $log =  "";
     if ($array["submit"] == "OK" && $array['login'] && $array['newpw'] && $array['oldpw'])
     {
-        $accounts = unserialize(file_get_contents('./private/passwd'));
+        $accounts = unserialize(file_get_contents('../private/passwd'));
         for($i = 0; $i < count($accounts); $i++)
         {
             
@@ -21,13 +21,10 @@
         if ($log == $array['login'] && $pass == hash('md5', $array['oldpw']))
         {
             $account1[] = array("login" => $array['login'], "passwd" => hash('md5', $array['newpw']));
-            if  (file_put_contents('./private/passwd',serialize($account1)))
+            if  (file_put_contents('../private/passwd',serialize($account1)))
             {
                 echo "OK\n";
                 header('location: ./index.html');
             }
         }
-        echo "ERROR\n";
-    }else
-        echo "ERROR\n";
-?>
+    }?>

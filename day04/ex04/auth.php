@@ -3,7 +3,7 @@
     {
         if ($login && $passwd)
         {
-            $accounts = unserialize(file_get_contents('./private/passwd'));
+            $accounts = unserialize(file_get_contents('../private/passwd'));
             $log = "";
             $pass = "";
             

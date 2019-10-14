@@ -4,12 +4,12 @@
         $array[$key] = $value;
     if ($array["submit"] == "OK" && $array['login'] && $array['passwd'])
     {
-        if (!file_exists('./private/passwd'))
+        if (!file_exists('../private/passwd'))
         {
-            mkdir('./private');
+            mkdir('../private');
             $user = array("login" => $array['login'], "passwd" => hash('md5', $array['passwd']));
             $account = array($user);
-            if  (file_put_contents('./private/passwd',serialize($account)))
+            if  (file_put_contents('../private/passwd',serialize($account)))
             {
                 echo "OK\n";
                 header('location: ./index.html');
@@ -29,12 +29,11 @@
                 }
             }
             $accounts[] = array("login" => $array['login'], "passwd" => hash('md5', $array['passwd']));
-            if  (file_put_contents('./private/passwd', serialize($accounts)))
+            if  (file_put_contents('../private/passwd', serialize($accounts)))
             { 
                 echo "OK\n";
                 header('location: ./index.html');
             }
         }
-    }else
-        echo "ERROR\n";
+    }
 ?>
