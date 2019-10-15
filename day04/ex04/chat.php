@@ -12,7 +12,7 @@
             {
                 foreach ($accounts[$i] as $key => $value)
                     $arry[$key] = $value;
-                $arry2[] = array($arry); 
+                $arry2[] = $arry; 
             }
             $i = 0;
             while ($i < count($arry2))

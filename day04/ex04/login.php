@@ -12,6 +12,6 @@
         header('location: ./index.html')
 ?>
 <html><body>
-<iframe name="chat" src="chat.php" width="100%" height="550px"></iframe>
-<iframe name="speak" src="speak.php" width="100%" height="50px"></iframe>
+<iframe name="chat" src="chat.php" width="100%"></iframe>
+<iframe name="speak" src="speak.php" width="100%"></iframe>
 </body></html>
